@@ -1,6 +1,14 @@
 #include <iostream>
 using namespace std;
 
+void show_array(int *array, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << "array[" << i << "]" << ":\t" << array[i] << endl;
+	}
+}
+
 int* create_array(int &n)
 {
 	cout << "Введите количество элементов в целочисленном массиве: ";
@@ -13,22 +21,20 @@ int* create_array(int &n)
 	}
 
 	int* array = new int[n];
+	
+	for	(int i = 0; i < n; i++) array[i] = 0;
 
-	cout << "Массив на " << n << " элементов создан." << endl;
+	cout << "Пустой массив на " << n << " элементов создан." << endl;
 	
 	return array;
 }
 
 void show_menu()
 {
-printf("Выберите действие:\n\
-1) Создать массив с нуля.\n\
+printf("\nВыберите действие:\n\
+1) Создать массив.\n\
 2) Вывести содержимое массива на консоль.\n\
-3) Заполнить массив случайными значениями.\n\
-4) Заполнить весь массив значениями с клавиатуры.\n\
-5) Заменить одно значение в массиве на введённое с клавиатуры.\n\
-6) Найти три наименьших положительных элемента массива.\n\
-7) Выйти.\n");
+3) Выйти.\n");
 }
 
 int main(int argc, char **argv)
@@ -56,21 +62,12 @@ int main(int argc, char **argv)
 				array = create_array(n);
 				break;
 			case 2: 
-
+				if (array != nullptr)
+					show_array(array, n);
+				else
+					cout << "Для начала массив необходимо создать!" << endl;
 				break;
-			case 3: 
-
-				break;
-			case 4: 
-
-				break;
-			case 5:
-
-				break;
-			case 6: 
-
-				break;
-			case 7: 
+			case 3:
 				done = true;
 				break;
 		}
