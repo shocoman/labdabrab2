@@ -3,6 +3,30 @@
 #include <time.h>
 using namespace std;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void swap(int &a, int &b)
 {
 	int temp = a;
@@ -45,10 +69,12 @@ void show_menu()
 {
 printf("\nВыберите действие:\n\
 1) Создать массив.\n\
-2) Заполнить весь массив значениями с клавиатуры.\n\
-3) Заменить одно значение в массиве на введённое с клавиатуры.\n\
-4) Найти три наименьших положительных элемента массива.\n\
-5) Выйти.\n");
+\
+\
+4) Заполнить весь массив значениями с клавиатуры.\n\
+5) Заменить одно значение в массиве на введённое с клавиатуры.\n\
+6) Найти три наименьших положительных элемента массива.\n\
+7) Выйти.\n");
 }
 
 int main(int argc, char **argv)
@@ -76,7 +102,7 @@ int main(int argc, char **argv)
 				}
 				array = create_array(n);
 				break;
-			case 2:
+			case 4:
 				if (array != nullptr)
 				{
 					for (int i = 0; i < n; i++)
@@ -89,7 +115,7 @@ int main(int argc, char **argv)
 				else
 					cout << "Для начала массив необходимо создать!" << endl;
 				break;
-			case 3:
+			case 5:
 				int j,k;
 				if (array != nullptr)
 				{
@@ -106,7 +132,7 @@ int main(int argc, char **argv)
 				else
 					cout << "Для начала массив необходимо создать!" << endl;					
 				break;
-			case 4:
+			case 6:
 				if (array != nullptr)
 				{
 					array_copy = copy_array(array, n);
@@ -143,7 +169,7 @@ int main(int argc, char **argv)
 				else
 					cout << "Для начала массив необходимо создать!" << endl;					
 				break;
-			case 5: 
+			case 7: 
 				done = true;
 				break;
 		}
