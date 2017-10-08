@@ -1,5 +1,17 @@
 #include <iostream>
+#include <random>
+#include <time.h>
 using namespace std;
+
+void randomize_array(int *array, int n)
+{
+	srand(time(NULL) + rand() % 50);
+	for (int i = 0; i < n; i++)
+	{
+		array[i] = rand() % 2000 - 1000;
+	}
+	cout << "Массив был заполнен случайными значениями." << endl;
+}
 
 void show_array(int *array, int n)
 {
@@ -34,7 +46,8 @@ void show_menu()
 printf("\nВыберите действие:\n\
 1) Создать массив.\n\
 2) Вывести содержимое массива на консоль.\n\
-3) Выйти.\n");
+3) Заполнить массив случайными значениями.\n\
+4) Выйти.\n");
 }
 
 int main(int argc, char **argv)
@@ -68,6 +81,12 @@ int main(int argc, char **argv)
 					cout << "Для начала массив необходимо создать!" << endl;
 				break;
 			case 3:
+				if (array != nullptr)
+					randomize_array(array, n);
+				else
+					cout << "Для начала массив необходимо создать!" << endl;
+				break;
+			case 4: 
 				done = true;
 				break;
 		}
