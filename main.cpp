@@ -1,4 +1,6 @@
 #include <iostream>
+#include <random>
+#include <time.h>
 using namespace std;
 
 int* create_array(int &n)
@@ -13,22 +15,21 @@ int* create_array(int &n)
 	}
 
 	int* array = new int[n];
+	
+	for	(int i = 0; i < n; i++) array[i] = 0;
 
-	cout << "Массив на " << n << " элементов создан." << endl;
+	cout << "Пустой массив на " << n << " элементов создан." << endl;
 	
 	return array;
 }
 
 void show_menu()
 {
-printf("Выберите действие:\n\
-1) Создать массив с нуля.\n\
-2) Вывести содержимое массива на консоль.\n\
-3) Заполнить массив случайными значениями.\n\
-4) Заполнить весь массив значениями с клавиатуры.\n\
-5) Заменить одно значение в массиве на введённое с клавиатуры.\n\
-6) Найти три наименьших положительных элемента массива.\n\
-7) Выйти.\n");
+printf("\nВыберите действие:\n\
+1) Создать массив.\n\
+2) Заполнить весь массив значениями с клавиатуры.\n\
+3) Заменить одно значение в массиве на введённое с клавиатуры.\n\
+4) Выйти.\n");
 }
 
 int main(int argc, char **argv)
@@ -55,22 +56,37 @@ int main(int argc, char **argv)
 				}
 				array = create_array(n);
 				break;
-			case 2: 
-
+			case 2:
+				if (array != nullptr)
+				{
+					for (int i = 0; i < n; i++)
+					{
+						cout << "array[" << i << "]" << " будет равен: ";
+						cin >> array[i];
+					}
+					cout << "Массив был полностью заполнен." << endl;
+				}
+				else
+					cout << "Для начала массив необходимо создать!" << endl;
 				break;
-			case 3: 
-
+			case 3:
+				int j,k;
+				if (array != nullptr)
+				{
+					cout << "Значение какого элемента массива вы хотите поменять и на что: ";
+					cin >> j >> k;
+					while (j < 0 || j >= n)
+					{
+						cout << "Такого элемента массива не существует. Повторите: ";
+						cin >> j >> k;
+					}
+					array[j] = k;
+					printf("%i-му элементу массива было присвоено значение %i", j,k);
+				}
+				else
+					cout << "Для начала массив необходимо создать!" << endl;					
 				break;
 			case 4: 
-
-				break;
-			case 5:
-
-				break;
-			case 6: 
-
-				break;
-			case 7: 
 				done = true;
 				break;
 		}
