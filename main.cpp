@@ -21,12 +21,6 @@ void show_array(int *array, int n)
 	}
 }
 
-
-
-
-
-
-
 void swap(int &a, int &b)
 {
 	int temp = a;
