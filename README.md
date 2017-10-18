@@ -1,4 +1,3 @@
-# labdabrab2
 <p>Программа предназначена для базовой работы с динамическим массивом.</p>
 <img src='https://i.imgur.com/fhpzKyf.png' />
 <br>
@@ -10,4 +9,3 @@
 <li>Отображение меню</li>
 <li>Заполнение массива случайными значениями</li>
 </ul>
-[asdasd](https://i.imgur.com/fhpzKyf.png)
