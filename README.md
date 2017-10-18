@@ -1,6 +1,5 @@
 <p>Программа предназначена для базовой работы с динамическим массивом.</p>
-<img src="http://gospodaretsva.com/wp-content/uploads/2011/11/4-
-21.png"/>
+<img src='https://i.imgur.com/fhpzKyf.png' />
 <br>
 <h3>Функции</h3>
 <ul>
