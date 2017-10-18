@@ -9,4 +9,4 @@
 <li>Вычисление энтропии</li>
 <li>Вычисление средней длины кодового слова</li>
 </ul>
-![asdasd](https://guides.github.com/images/logo@2x.png)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
