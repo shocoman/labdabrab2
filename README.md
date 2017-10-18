@@ -9,3 +9,4 @@
 <li>Отображение меню</li>
 <li>Заполнение массива случайными значениями</li>
 </ul>
+[asdasd](https://i.imgur.com/fhpzKyf.png)
