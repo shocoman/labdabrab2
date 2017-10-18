@@ -107,6 +107,7 @@ int main(int argc, char **argv)
 					randomize_array(array, n);
 				else
 					cout << "Для начала массив необходимо создать!" << endl;
+				break;
 			case 4:
 				if (array != nullptr)
 				{
