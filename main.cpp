@@ -26,6 +26,7 @@ void show_array(int *array, int n)
 void swap(int &a, int &b)
 {
 	int temp = a;
+	
 	a = b;
 	b = temp;
 }
@@ -75,20 +76,23 @@ printf("Select an action:\n\
 
 int main(int argc, char **argv)
 {
-	SetConsoleCP(65001);
-	SetConsoleOutputCP(65001);
-	
+	//SetConsoleCP(65001);					//Coding for Russian output in the console	
+	//SetConsoleOutputCP(65001);
+
 	int* array = nullptr;
 	int* array_copy = nullptr;
 	int n;
 	
 	int choice;
 	bool done = false;
-	while(!done)
-	{
+	
+	do {
 		show_menu();
+
 		cin >> choice;
-		printf("\n");
+
+		cout << endl;
+
 		switch (choice)
 		{
 			case 1: 
@@ -98,19 +102,25 @@ int main(int argc, char **argv)
 					array = nullptr;
 				}
 				array = create_array(n);
+
 				break;
+
 			case 2: 
 				if (array != nullptr)
 					show_array(array, n);
 				else
 					cout << "First you need to create an array!" << endl;
+
 				break;
+
 			case 3:
 				if (array != nullptr)
 					randomize_array(array, n);
 				else
 					cout << "First you need to create an array!" << endl;
+
 				break;
+
 			case 4:
 				if (array != nullptr)
 				{
@@ -123,7 +133,9 @@ int main(int argc, char **argv)
 				}
 				else
 					cout << "First you need to create an array!" << endl;
+
 				break;
+
 			case 5:
 				int j,k;
 				if (array != nullptr)
@@ -139,8 +151,10 @@ int main(int argc, char **argv)
 					printf("%i an array element was assigned a value %i", j,k);
 				}
 				else
-					cout << "First you need to create an array!" << endl;					
+					cout << "First you need to create an array!" << endl;		
+
 				break;
+
 			case 6:
 				if (array != nullptr)
 				{
@@ -178,11 +192,13 @@ int main(int argc, char **argv)
 				else
 					cout << "First you need to create an array!" << endl;					
 				break;
+
 			case 7: 
 				done = true;
+
 				break;
 		}
-	}
+	} while(!done);
 	
 	return 0;
 }
