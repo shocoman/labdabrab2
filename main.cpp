@@ -12,7 +12,7 @@ void randomize_array(int *array, int n)
 	{
 		array[i] = rand() % 2000 - 1000;
 	}
-	cout << "Массив был заполнен случайными значениями." << endl;
+	cout << "The array was filled with random numbers." << endl;
 }
 
 void show_array(int *array, int n)
@@ -43,12 +43,12 @@ int* copy_array(int *array, int n)
 
 int* create_array(int &n)
 {
-	cout << "Введите количество элементов в целочисленном массиве: ";
+	cout << "Enter the number of elements in an integer array: ";
 	cin >> n;
 	
 	while(n <= 0)
 	{
-		cout << "Количество элементов массива не может быть меньше одного! Повторите: ";
+		cout << "The number of array elements can not be less than one! Please repeat: ";
 		cin >> n;
 	}
 
@@ -56,21 +56,21 @@ int* create_array(int &n)
 	
 	for	(int i = 0; i < n; i++) array[i] = 0;
 
-	cout << "Пустой массив на " << n << " элементов создан." << endl;
+	cout << "Empty array on " << n << " cells created." << endl;
 	
 	return array;
 }
 
 void show_menu()
 {
-printf("Выберите действие:\n\
-1) Создать массив с нуля.\n\
-2) Вывести содержимое массива на консоль.\n\
-3) Заполнить массив случайными значениями.\n\
-4) Заполнить весь массив значениями с клавиатуры.\n\
-5) Заменить одно значение в массиве на введённое с клавиатуры.\n\
-6) Найти три наименьших положительных элемента массива.\n\
-7) Выйти.\n");
+printf("Select an action:\n\
+1) Create an array.\n\
+2) Output the contents of the array to the console.\n\
+3) Fill the array with random values.\n\
+4) Fill the all array with values from the keyboard.\n\
+5) Replace one value in the array with one entered from the keyboard.\n\
+6) Find the three least positive elements of an array.\n\
+7) Exit.\n");
 }
 
 int main(int argc, char **argv)
@@ -103,43 +103,43 @@ int main(int argc, char **argv)
 				if (array != nullptr)
 					show_array(array, n);
 				else
-					cout << "Для начала массив необходимо создать!" << endl;
+					cout << "First you need to create an array!" << endl;
 				break;
 			case 3:
 				if (array != nullptr)
 					randomize_array(array, n);
 				else
-					cout << "Для начала массив необходимо создать!" << endl;
+					cout << "First you need to create an array!" << endl;
 				break;
 			case 4:
 				if (array != nullptr)
 				{
 					for (int i = 0; i < n; i++)
 					{
-						cout << "array[" << i << "]" << " будет равен: ";
+						cout << "array[" << i << "]" << " will be: ";
 						cin >> array[i];
 					}
-					cout << "Массив был полностью заполнен." << endl;
+					cout << "The array was completely filled." << endl;
 				}
 				else
-					cout << "Для начала массив необходимо создать!" << endl;
+					cout << "First you need to create an array!" << endl;
 				break;
 			case 5:
 				int j,k;
 				if (array != nullptr)
 				{
-					cout << "Значение какого элемента массива вы хотите поменять и на что: ";
+					cout << "Enter the number of the element you want to change and what for: ";
 					cin >> j >> k;
 					while (j < 0 || j >= n)
 					{
-						cout << "Такого элемента массива не существует. Повторите: ";
+						cout << "There is no such element of the array. Please repeat: ";
 						cin >> j >> k;
 					}
 					array[j] = k;
-					printf("%i-му элементу массива было присвоено значение %i", j,k);
+					printf("%i an array element was assigned a value %i", j,k);
 				}
 				else
-					cout << "Для начала массив необходимо создать!" << endl;					
+					cout << "First you need to create an array!" << endl;					
 				break;
 			case 6:
 				if (array != nullptr)
@@ -170,13 +170,13 @@ int main(int argc, char **argv)
 					}
 					else 
 					{
-						cout << "В массиве недостаточно положительных элементов." << endl;
+						cout << "There are not enough positive elements in the array." << endl;
 					}
 					
 					delete[] array_copy;
 				}
 				else
-					cout << "Для начала массив необходимо создать!" << endl;					
+					cout << "First you need to create an array!" << endl;					
 				break;
 			case 7: 
 				done = true;
