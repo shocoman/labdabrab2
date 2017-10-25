@@ -1,4 +1,4 @@
-<h1><p>The program is designed for basic work with a dynamic array.</p></h1>
+<h1><p>The program is intended for basic work with a dynamic array.</p></h1>
 <img src='https://i.imgur.com/fhpzKyf.png' />
 <br>
 <h3>Functions of the program:</h3>
